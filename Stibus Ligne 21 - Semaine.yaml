@@ -1,0 +1,114 @@
+ligne_21:
+  arrets:
+    - nom: "Polyclinique du Parc/Ctre Hospitalier"
+      ville: "Maubeuge"
+      horaires:
+        vers_Berlaimont: ["07:03", "12:10", "17:08", "18:08"]
+        vers_Louvroil_Maubeuge: ["07:41", "20:08"]
+
+    - nom: "Collège Budé"
+      ville: "Maubeuge"
+      horaires:
+        vers_Berlaimont: ["07:04", "12:11", "17:09", "18:09"]
+        vers_Louvroil_Maubeuge: ["07:40"]
+
+    - nom: "Lycée Pierre Forest"
+      ville: "Maubeuge"
+      horaires:
+        vers_Berlaimont: ["07:05", "12:12", "17:10", "18:10"]
+        vers_Louvroil_Maubeuge: ["07:39"]
+
+    - nom: "Avenue de France"
+      ville: "Maubeuge"
+      horaires:
+        vers_Berlaimont: ["07:08", "12:15", "17:13", "18:13"]
+        vers_Louvroil_Maubeuge: ["07:36"]
+
+    - nom: "Pôle Gare Arrivée Quai 6"
+      ville: "Maubeuge"
+      horaires:
+        vers_Berlaimont: ["07:11", "12:18", "17:16", "18:16"]
+        vers_Louvroil_Maubeuge: ["07:31", "20:06"]
+
+    - nom: "Pôle Gare Départ Quai 6"
+      ville: "Maubeuge"
+      horaires:
+        vers_Berlaimont: ["07:13", "12:20", "17:18", "18:18"]
+        vers_Louvroil_Maubeuge: ["07:33", "20:08"]
+
+    - nom: "Paradis"
+      ville: "Louvroil"
+      horaires:
+        vers_Berlaimont: ["07:21", "12:27", "17:26", "18:26"]
+        vers_Louvroil_Maubeuge: ["07:24", "19:59"]
+
+    - nom: "Grand Sars"
+      ville: "Louvroil"
+      horaires:
+        vers_Berlaimont: ["07:22", "12:28", "17:27", "18:27"]
+        vers_Louvroil_Maubeuge: ["07:23", "19:58"]
+
+    - nom: "Providence"
+      ville: "Louvroil"
+      horaires:
+        vers_Berlaimont: ["07:24", "12:30", "17:29", "18:29"]
+        vers_Louvroil_Maubeuge: ["07:21", "19:56"]
+
+    - nom: "Prés d’Herminy"
+      ville: "Louvroil"
+      horaires:
+        vers_Berlaimont: ["07:25", "07:45", "08:46", "09:46", "11:01", "11:46", "12:31", "13:28", "14:29", "15:29", "16:36", "17:30", "18:30", "19:32"]
+        vers_Louvroil_Maubeuge: ["07:20", "08:13", "09:13", "10:13", "11:28", "12:34", "13:13", "13:57", "14:58", "15:59", "17:13", "18:09", "19:00", "19:55"]
+
+    - nom: "Hôtel de Ville"
+      ville: "Hautmont"
+      horaires:
+        vers_Berlaimont: ["07:31", "07:51", "08:52", "09:52", "11:07", "11:54", "12:39", "13:36", "14:37", "15:37", "16:46", "17:40", "18:39", "19:40"]
+        vers_Louvroil_Maubeuge: ["06:51", "07:44", "08:44", "09:48", "11:00", "12:08", "12:46", "13:31", "14:32", "15:33", "16:44", "17:42", "18:35", "19:30"]
+
+    - nom: "Libération"
+      ville: "Hautmont"
+      horaires:
+        vers_Berlaimont: ["07:32", "07:52", "08:53", "09:53", "11:08", "11:55", "12:40", "13:37", "14:38", "15:38", "16:47", "17:41", "18:40", "19:41"]
+        vers_Louvroil_Maubeuge: []
+
+    - nom: "Queue du Bois"
+      ville: "Hautmont"
+      horaires:
+        vers_Berlaimont: ["07:36", "07:56", "08:57", "09:57", "11:12", "11:59", "12:44", "13:41", "14:42", "15:42", "16:51", "17:45", "18:44", "19:45"]
+        vers_Louvroil_Maubeuge: ["07:11", "08:04", "09:04", "10:05", "11:19", "12:25", "13:04", "13:48", "14:49", "15:50", "17:03", "18:01", "18:52", "19:47"]
+
+    - nom: "Grand Rue"
+      ville: "Saint-Rémy-du-Nord"
+      horaires:
+        vers_Berlaimont: ["07:39", "07:59", "09:00", "10:00", "11:15", "12:02", "12:47", "13:44", "14:45", "15:45", "16:54", "17:48", "18:47", "19:48"]
+        vers_Louvroil_Maubeuge: ["07:08", "08:01", "09:01", "10:03", "11:16", "12:23", "13:02", "13:46", "14:47", "15:48", "17:01", "17:59", "18:50", "19:45"]
+
+    - nom: "Mairie"
+      ville: "Bachant"
+      horaires:
+        vers_Berlaimont: ["07:46", "08:06", "09:07", "10:07", "11:22", "12:09", "12:54", "13:51", "14:52", "15:52", "17:01", "17:55", "18:54", "19:55"]
+        vers_Louvroil_Maubeuge: ["07:01", "07:54", "08:54", "09:57", "11:09", "12:17", "12:55", "13:40", "14:41", "15:42", "16:54", "17:52", "18:44", "19:39"]
+
+    - nom: "Gare SNCF"
+      ville: "Aulnoye-Aymeries"
+      horaires:
+        vers_Berlaimont: ["07:50", "08:10", "09:11", "10:11", "11:26", "12:13", "12:58", "13:55", "14:56", "15:56", "17:05", "17:59", "18:58", "19:59"]
+        vers_Louvroil_Maubeuge: ["06:55", "07:48", "08:48", "09:52", "11:04", "12:12", "12:50", "13:35", "14:36", "15:37", "16:49", "17:47", "18:39", "19:34"]
+
+    - nom: "Centre Administratif"
+      ville: "Aulnoye-Aymeries"
+      horaires:
+        vers_Berlaimont: ["07:55", "08:15", "09:15", "10:15", "11:30", "12:18", "13:03", "13:59", "15:00", "16:00", "17:10", "18:04", "19:02", "20:03"]
+        vers_Louvroil_Maubeuge: []
+
+    - nom: "Vert Dragon"
+      ville: "Berlaimont"
+      horaires:
+        vers_Berlaimont: ["08:05", "08:25", "09:25", "10:25", "11:40", "12:28", "13:13", "14:09", "15:10", "16:10", "17:20", "18:14", "19:11", "20:12"]
+        vers_Louvroil_Maubeuge: ["06:37", "07:30", "08:30", "09:35", "10:47", "11:55", "12:33", "13:18", "14:19", "15:20", "16:30", "17:28", "18:23", "19:18"]
+
+
+
+
+

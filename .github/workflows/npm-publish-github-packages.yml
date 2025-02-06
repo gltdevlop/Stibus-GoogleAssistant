@@ -1,0 +1,22 @@
+name: Create Docker Webhook Image
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+     - uses: actions/checkout@v4
+     - name: build push   
+       uses: GlueOps/github-actions-build-push-containers@v0.4.1
+       with:
+         image-name-overwrite: webhook-stibus
+         token: ${{ secrets.GITHUB_TOKEN }}
+         tags: latest

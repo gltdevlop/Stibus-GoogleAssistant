@@ -35,9 +35,9 @@ def prochain_bus(ligne, arret, direction):
     maintenant = datetime.now().strftime("%H:%M")
     for heure in horaires:
         if heure > maintenant:
-            return f"Le prochain bus de la ligne {ligne} à {arret} vers {direction} est à {heure}"
+            return f"Le prochain bus de la {ligne} à {arret} en direction de {direction} est prévu à {heure}"
 
-    return f"Plus de bus aujourd'hui pour {arret} vers {direction}."
+    return f"Plus de bus aujourd'hui pour {arret} en direction de {direction}."
 
 # Route pour Dialogflow
 @app.route("/webhook", methods=["POST"])

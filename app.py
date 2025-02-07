@@ -50,7 +50,7 @@ def webhook():
     direction = params.get("direction", "")
 
     if not ligne or not arret or not direction:
-        return jsonify({"fulfillmentText": "Désolé, je n'ai pas compris. Pouvez-vous répéter ?"})
+        return jsonify({"fulfillmentText": "Merci de remplir tous les champs."})
 
     reponse = prochain_bus(ligne, arret, direction)
     return jsonify({"fulfillmentText": reponse})

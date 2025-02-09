@@ -30,11 +30,15 @@ def prochain_bus(ligne, arret, direction):
             break
 
     if not horaires:
-        return f"Aucun horaire trouvé pour {arret} vers {direction}"
+        return f"Aucun horaire trouvé pour {arret} vers {direction}."
 
-    maintenant = datetime.now().strftime("%H:%M")
+    # Convertir l'heure actuelle en datetime
+    maintenant = datetime.strptime(datetime.now().strftime("%H:%M"), "%H:%M")
+
+    # Trouver le premier horaire qui est plus grand que l'heure actuelle
     for heure in horaires:
-        if heure > maintenant:
+        heure_bus = datetime.strptime(heure, "%H:%M")
+        if heure_bus > maintenant:
             return f"Le prochain bus de la {ligne} à {arret} en direction de {direction} est prévu à {heure}"
 
     return f"Plus de bus aujourd'hui pour {arret} en direction de {direction}."

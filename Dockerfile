@@ -10,6 +10,11 @@ COPY . /app
 # Installer les dépendances
 RUN pip install flask pyyaml
 
+# Set the correct timezone
+
+ENV TZ=Europe/Paris
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Exposer le port 5000 (celui utilisé par Flask)
 EXPOSE 5000
 

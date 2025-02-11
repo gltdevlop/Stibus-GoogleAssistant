@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import yaml
-from datetime import datetime
+from datetime import datetime, timedelta
 import unicodedata
 import os
 
@@ -16,12 +16,12 @@ def normalize_text(text):
     return text
 
 # Load schedules from YAML files based on the day of the week
-def charger_horaires(ligne):
-    today = datetime.today().weekday()  # 0 = Monday, 6 = Sunday
+def charger_horaires(ligne, day_offset=0):
+    target_day = (datetime.today().weekday() + day_offset) % 7
     
-    if today == 6:
+    if target_day == 6:
         return "Bus du dimanche pas encore enregistrés. Visitez https://stibus.fr"
-    elif today < 5:
+    elif target_day < 5:
         fichier_yaml = f"lines/week/{ligne}.yaml"
     else:
         fichier_yaml = f"lines/sat/{ligne}.yaml"
@@ -31,7 +31,6 @@ def charger_horaires(ligne):
             return yaml.safe_load(file)
     except FileNotFoundError:
         return None
-
 
 # Function to find the next bus
 def prochain_bus(ligne, arret, direction):
@@ -47,7 +46,7 @@ def prochain_bus(ligne, arret, direction):
         return f"Aucune donnée pour la ligne {ligne}."
 
     horaires = None
-
+    
     # Normalize all stop names in YAML before searching
     for stop in data[key]["arrets"]:
         stop_nom_normalized = normalize_text(stop["nom"])
@@ -77,7 +76,22 @@ def prochain_bus(ligne, arret, direction):
         if heure_bus > maintenant:
             return f"Le prochain bus de la {ligne} à {arret} en direction de {direction} est prévu à {heure}."
 
-    return f"Plus de bus aujourd'hui pour {arret} en direction de {direction}."
+    # If no buses left today, check tomorrow's schedule
+    data_tomorrow = charger_horaires(ligne, day_offset=1)
+    if not data_tomorrow or key not in data_tomorrow:
+        return f"Aucun horaire disponible pour demain."
+    
+    for stop in data_tomorrow[key]["arrets"]:
+        stop_nom_normalized = normalize_text(stop["nom"])
+        if stop_nom_normalized == normalize_text(arret):
+            direction_key = f"vers_{normalize_text(direction)}"
+            horaires_tomorrow = {normalize_text(k): v for k, v in stop["horaires"].items()}
+            if direction_key in horaires_tomorrow:
+                horaires_tomorrow = horaires_tomorrow[direction_key]
+                if horaires_tomorrow:
+                    return f"Le prochain bus de la {ligne} à {arret} en direction de {direction} est demain à {horaires_tomorrow[0]}."
+    
+    return f"Aucun bus disponible demain non plus pour {arret} en direction de {direction}."
 
 # Webhook route for Dialogflow
 @app.route("/webhook", methods=["POST"])

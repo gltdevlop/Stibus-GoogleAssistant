@@ -12,7 +12,7 @@ def normalize_text(text):
         return ""
     text = text.strip().lower()
     text = "".join(c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn")
-    text = text.replace(" ", "")  # Remove spaces
+    text = text.replace(" ", "").replace("'", "")  # Remove spaces and apostrophes
     return text
 
 # Load schedules from YAML files based on the day of the week

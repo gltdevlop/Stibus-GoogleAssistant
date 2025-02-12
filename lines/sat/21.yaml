@@ -1,6 +1,6 @@
 ligne_21:
   arrets:
-    - nom: "Prés d’Herminy"
+    - nom: "Prés d'Herminy"
       ville: "Louvroil"
       horaires:
         vers_Berlaimont: ["5:55", "6:45", "7:45", "8:45", "9:45", "10:50", "11:45", "12:25", "13:26", "14:39", "15:35", "16:40", "17:25", "18:25", "19:26"]

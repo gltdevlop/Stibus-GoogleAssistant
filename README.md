@@ -7,4 +7,4 @@ Image is pullable from GHCR to deploy on Docker or you can download the repo, in
 ### Is there an already usable version ? 
 No, there is no public URL to use it. You have to deploy it yoursef 😉
 
-### Any issues ? Improvements ? Create an Issue or a Pull Request on the repo !
+### Any issues ? Improvements ? Create an Issue or a Pull Request in the repo !
